@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>events</title>
+</head>
+<body>
+The events:
+      <ul>
+      	{% for x in events %}
+      	{{x.nameOfEvent}}
+      	Date:{{x.date}}
+      	About the event:{{x.disription}}
+      	Name Of the organizer:{{x.nameOfCreater}}
+      	Email:{{x.email}}
+      	Things to volunteer for:{{x.requirements}}
+      	Number of volunteers needed:{{x.numberOfVolunteers}}
+
+      	{% endfor %}
+      </ul>
+</body>
+</html>
