@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{{event.nameOfEvent}}
+    Date:{{event.date}}
+    About the event:{{event.disription}}
+    Name Of the organizer:{{event.nameOfCreater}}
+    Phone Number:{{event.phoneNumber}}
+    Email:{{event.email}}
+    Things to volunteer for:{{event.requirements}}
+    Number of volunteers needed:{{event.numberOfVolunteers}}
+    <img src="{{event.pic}}">
+    <form action="{{url_for('volunform', event_id=event.id)}}" method="POST">
+    <input type="submit" value="volunteer">	
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>ViewEvent</title>
+ 
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="body1">
+  <div>
+  <ul>
+  <li><a href="{{url_for('home')}}"><h4>Home</h4></a></li>
+  <li><a class="active" href=""><h4>Add event</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+  </ul>
+ 
+  <h5>{{event.nameOfEvent}}</h5> 
+  </div>
+<div id="main">
+     
+    <!-- <div align="justify" class="jobs_container">   -->	
+	<div class="jobs_container">
+          <div class="clearfix"> <img class="img1" src="{{event.pic}}" width="150" height="150"></div>
+          <div class="clearfix"> 
+	
+      	<div class="job-footer">
+<div class="job-about"><h3> Date:{{event.date}}
+	<br>
+	<br>
+							About the event:{{event.discription}}
+							<br>
+							<br>
+							Name Of the organizer:{{event.nameOfCreater}}
+							<br>
+							<br>
+							Phone Number:{{event.phoneNumber}}
+							<br>
+							<br>
+							Email:{{event.email}}
+							<br>
+							<br>
+							Things to volunteer for:{{event.requirements}}
+							<br>
+							<br>
+							Number of volunteers needed:{{event.numberOfVolunteers}}
+							<form action="{{url_for('volunform', event_id=event.id)}}" method="POST">
+    <input type="submit" value="volunteer" class="button">	
+    </form>
+
+</h3></div>
+
+</div>
+</div>
+      	
+  
+</body>
+</html>

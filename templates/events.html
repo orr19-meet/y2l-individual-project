@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>events</title>
-</head>
-<body>
-The events:
-      <ul>
+  <head>
+      <title>Home</title>
+ 
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body class="body1">
+  <div>
+  <ul>
+  <li><a class="active" href=""><h4>Home</h4></a></li>
+  <li><a href="{{url_for('addevent')}}"><h4>Add event</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+ 
+  </ul>
+  <h5>The Events</h5> 
+  </div>
+<div id="main">
+     
       	{% for x in events %}
-      	{{x.nameOfEvent}}
-      	Date:{{x.date}}
-      	About the event:{{x.disription}}
-      	Name Of the organizer:{{x.nameOfCreater}}
-      	Email:{{x.email}}
-      	Things to volunteer for:{{x.requirements}}
-      	Number of volunteers needed:{{x.numberOfVolunteers}}
+	<div class="jobs_container">
+          <div class="clearfix"> <img class="img1" src="{{x.pic}}" width="150" height="150"></div>
+          <div class="clearfix"> 
+	<div class="info">
+       <a href="{{url_for('viewevent',event_id=x.id)}}"><h6><div class="job-name">{{x.nameOfEvent}}</h6></a>
+      	<div class="job-footer">
+<div class="job-about"><h3>Date:{{x.date}}</h3></div>
+</div>
+</div>
+      	
+      	
 
       	{% endfor %}
       </ul>

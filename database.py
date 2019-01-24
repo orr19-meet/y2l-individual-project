@@ -20,12 +20,17 @@ def get_all_events():
     return events
 
 def get_all_events_by_name(nameOfEvent):
-	return session.query(Event).filter(nameOfEvent=nameOfEvent).all()
+	return session.query(Event).filter_by(nameOfEvent=nameOfEvent).all()
+
+def get_all_events_by_id(idOfEvent):
+	return session.query(Event).filter_by(id = idOfEvent).first()
+
 
 def volunteer(nameOfEvent):
-	event=session.query(Event).filter(nameOfEvent=nameOfEvent).all()
+	event=session.query(Event).filter_by(nameOfEvent=nameOfEvent).first()
 	event.numberOfVolunteers=event.numberOfVolunteers-1
+	session.commit()
 
 
-add_event("oiuyh","gh","fgh","fgu","fgh",2568868,4,"dfgh","ghj")
+
 print(get_all_events())

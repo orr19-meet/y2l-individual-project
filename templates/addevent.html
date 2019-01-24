@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-	<p>To add an event fill in the details!</p>
-<form action="/add_event" method="POST">
-    <input type="text" name="nameOfEvent" placeholder=" Name of the event">
-    <br>
-    <input type="text" name="date" placeholder=" The event's date">
-    <br>
-    <input type="text" name="discription" placeholder=" Discription of the event">
-    <br>
-    <input type="text" name="nameOfCreater" placeholder=" Your name/Organization's name">
-    <br>
-    <input type="text" name="phoneNumber" placeholder="Phone Number">
-    <br>
-    <input type="text" name="email" placeholder=" Email">
-    <br>
-    <input type="text" name="pic" placeholder="picture">
-    <br>
-    <input type="text" name="requirements" placeholder="Things you need people to bring or volunteers for certain things">
-    <br>
-    <input type="text" name="numberOfVolunteers" placeholder=" Number of volunteers needed">
-    <br>
-    <input type="submit" value="Add event">
-</form>
+  <head>
+      <title>Home</title>
 
-</body>
+     
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+  
+
+  </head>
+  <body class="body1">
+<ul>
+  <li><a href="{{url_for('home')}}"><h4>Home</h4></a></li>
+  <li><a class="active" href=""><h4>Add event</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+  </ul>
+<div>
+  <h5>Add An Event</h5> 
+<center>
+<form action="/add_event" method="POST">
+	 <table>
+  <tr><td><h3> The name of the event </h3></td> 
+  <td><input type="text" name="nameOfEvent" placeholder=" Name of the event" class="userinputs"></td></tr>
+  <tr><td><h3> Your name/Organization's name </h3></td>
+  <td><input type="text" name="nameOfCreater" placeholder=" Your name/Organization's name"class="userinputs"></td></tr>
+  <tr><td><h3> Discription of the event </h3> </td>
+  <td><input ttype="text" name="discription" placeholder=" Discription of the event" class="userinputs"></td></tr>
+  <tr><td><h3> Date </h3></td> 
+  <td><input type="text" name="date" placeholder="date" class="userinputs"></td></tr>
+  <tr><td><h3 class=""> Phone Number </h3> </td>
+  <td><input type="text" name="phoneNumber" placeholder="Phone Number" class="userinputs"></td></tr>
+  <tr><td><h3> Picture </h3></td> 
+  <td><input type="text" name="pic" placeholder="picture" class="userinputs"></td></tr>
+  <tr><td><h3> Email </h3></td> 
+  <td><input type="text" name="email" placeholder=" Email" class="userinputs"></td></tr>
+  <tr><td><h3> Things you need people to bring or volunteers for certain things </h3></td> 
+  <td><input type="text" name="requirements" placeholder="Requirements" class="userinputs"></td></tr>
+  <tr><td><h3>  Number of volunteers needed</h3></td> 
+  <td><input type="text" name="numberOfVolunteers" placeholder=" Number of volunteers needed" class="userinputs"></td></tr>
+  </table>
+  </center>
+</div>
+</br>
+</br>
+<center>
+<div class="publish_button">
+<input type="submit" value="Add event" class="button">
+
+</center>
+  </form>
+</div>
+  </body>
 </html>
+
+
+
+    
+   
+    
+   
